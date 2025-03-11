@@ -3,10 +3,11 @@ import java.util.List;
 
 public class Board {
     private final int wordLength;
-    private String board = "";
     private final String word;
-    StringBuilder sb;
+    private String board = "";
     private List<String> usedChars = new ArrayList<String>();
+
+    StringBuilder sb;
 
     public Board(String word) {
         this.wordLength = word.length();

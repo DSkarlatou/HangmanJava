@@ -17,7 +17,8 @@ public class Word {
         try {
             this.wordList = Files.readAllLines(Paths.get(filename), StandardCharsets.UTF_8);
         } catch( IOException e ) {
-            e.printStackTrace();
+            System.out.println("Error reading file: " + filename);
+            System.exit(-1);
         }
     }
 
