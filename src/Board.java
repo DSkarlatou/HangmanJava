@@ -5,7 +5,7 @@ public class Board {
     private final int wordLength;
     private final String word;
     private String board = "";
-    private List<String> usedChars = new ArrayList<String>();
+    private final List<String> usedChars = new ArrayList<>();
 
     StringBuilder sb;
 
@@ -17,15 +17,15 @@ public class Board {
 
     public void init()
     {
-        for(int i = 0; i < this.wordLength; i++)
+        for(int i = 0; i < this.wordLength; i++) {
             this.board += "_";
+        }
         display();
     }
 
     public boolean update(char guess)
     {
         String prevBoard = this.board;
-        //boolean flag = updateUsedCharsList(guess);
         if(!updateUsedCharsList(guess))
             return true;
 
@@ -37,10 +37,7 @@ public class Board {
         this.board = sb.toString();
 
         display();
-        if(this.board.equals(prevBoard))
-           return false;
-
-        return true;
+        return !this.board.equals(prevBoard);
     }
 
     public boolean updateUsedCharsList(char s) {

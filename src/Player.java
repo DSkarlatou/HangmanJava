@@ -2,12 +2,13 @@ import java.util.Scanner;
 
 public class Player {
     private final Scanner sc = new Scanner(System.in);
-    private final int chances = 7;
+
     public Player() {}
 
     public void play(Board board)
     {
         int i = 0;
+        int chances = 7;
         while(i < chances)
         {
             board.displayHangman(i);
